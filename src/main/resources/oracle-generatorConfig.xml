@@ -21,8 +21,6 @@
                         connectionURL="jdbc:oracle:thin:@192.168.0.111:1521:yycg"
                         userId="yycg02"
                         password="yycg">
-
-
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="true"/>

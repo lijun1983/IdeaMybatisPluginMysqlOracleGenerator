@@ -18,7 +18,7 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -58,6 +58,9 @@
                             <groupId>com.oracle</groupId>
                             <artifactId>ojdbc14</artifactId>
                             <version>11.2.0.1.0</version>
+                            <!--<groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>5.1.28</version>-->
                         </dependency>
                     </dependencies>
                     <configuration>
@@ -72,3 +75,4 @@
     </build>
 
 </project>
+        <!--mybatis-generator:generate-->
