@@ -26,47 +26,56 @@
             <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.yycg.pojo" targetProject="src/main/java">
+        <!--<javaModelGenerator targetPackage="yycg.business.pojo.vo" targetProject="src/main/java">
 
-            <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
+            &lt;!&ndash; 是否允许子包，即targetPackage.schemaName.tableName &ndash;&gt;
             <property name="enableSubPackages" value="false"/>
-            <!-- 是否对model添加 构造函数 -->
+            &lt;!&ndash; 是否对model添加 构造函数 &ndash;&gt;
             <property name="constructorBased" value="true"/>
-            <!-- 是否对类CHAR类型的列的数据进行trim操作 -->
+            &lt;!&ndash; 是否对类CHAR类型的列的数据进行trim操作 &ndash;&gt;
             <property name="trimStrings" value="true"/>
-            <!-- 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 -->
+            &lt;!&ndash; 建立的Model对象是否 不可改变  即生成的Model对象不会有 setter方法，只有构造方法 &ndash;&gt;
             <property name="immutable" value="false"/>
-            <!-- 设置一个根对象，即基类-->
-            <property name="rootClass" value="com.yycg.pojo.BaseEntity"/>
+            &lt;!&ndash; 设置一个根对象，即基类&ndash;&gt;
+            <property name="rootClass" value="yycg.business.pojo"/>
+        </javaModelGenerator>-->
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="yycg.business.pojo.po"
+                            targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
         </javaModelGenerator>
-
         <!--Mapper映射文件生成器 targetPackage：指定生成的model生成所在的包名 targetProject     指定在该项目下所在的路径 -->
 
 
 
-        <sqlMapGenerator targetPackage="com.yycg.dao" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="yycg.business.dao.mapper" targetProject="src/main/java">
             <!--是否允许子包，即targetPackage.schemaName.tableName-->
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.yycg.dao" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="yycg.business.dao.mapper" targetProject="src/main/java" type="XMLMAPPER">
             <!--是否允许子包，即targetPackage.schemaName.tableName-->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
-
+        <table schema="" tableName="ypxx" >
+            <columnOverride column="zbjg" javaType="java.lang.Float"/>
+        </table>
         <!-- 监督单位 -->
-        <table schema="" tableName="userjd" />
-        <!-- 供应商 -->
+       <!-- <table schema="" tableName="userjd" />
+        &lt;!&ndash; 供应商 &ndash;&gt;
         <table schema="" tableName="usergys" />
         <table schema="" tableName="usergysarea" />
-        <!-- 医院 -->
+        &lt;!&ndash; 医院 &ndash;&gt;
         <table schema="" tableName="useryy" />
-        <!-- 数据字典 -->
+        &lt;!&ndash; 数据字典 &ndash;&gt;
         <table schema="" tableName="dictinfo" />
         <table schema="" tableName="dicttype" />
-        <!-- 系统参数 -->
+        &lt;!&ndash; 系统参数 &ndash;&gt;
         <table schema="" tableName="basicinfo" />
-        <!-- 区域表 -->
-        <table schema="" tableName="bss_sys_area" />
+        &lt;!&ndash; 区域表 &ndash;&gt;
+        <table schema="" tableName="bss_sys_area" />-->
     </context>
 </generatorConfiguration>
